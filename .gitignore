@@ -1,0 +1,49 @@
+# Node modules
+/node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# dotenv environment variables file
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor settings
+.idea/
+.vscode/
+
+# Temporary files
+*.bak
+*.swp
+*.swo
+
+# Build directories
+/dist/
+/build/
+
+# Coverage directory for testing tools
+/coverage/
+
+# TypeScript output (if using TypeScript)
+*.tsbuildinfo
+
+# NPM package artifact
+*.tgz
+
+# Ignore test reports
+/test-results/
+
+# Ignore the Jest cache directory
+/.jest/
