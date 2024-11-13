@@ -1,4 +1,5 @@
 import { Document } from 'mongoose';
+import { MESSAGE_STATUS } from './constants';
 
 export interface IUser extends Document {
   firstName: string;
@@ -7,6 +8,7 @@ export interface IUser extends Document {
   birthday: Date;
   location: string;
   nextBirthdayNotification: Date;
-  messageStatus: 'PENDING' | 'SENT' | 'FAILED' | 'FAILED_PERMANENT';
-  notificationType?: 'birthday' | 'anniversary' | 'all';
+  messageStatus: typeof MESSAGE_STATUS[keyof typeof MESSAGE_STATUS];
 }
+
+export type MessageType = 'birthday' | 'anniversary';

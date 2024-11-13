@@ -7,14 +7,15 @@ const UserSchema: Schema = new Schema({
   lastName: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   birthday: { type: Date, required: true },
-  location: { type: String, required: true }, // Timezone, e.g., "America/New_York", "Asia/Jakarta", etc.
+  location: { type: String, required: true },
   nextBirthdayNotification: { type: Date, required: true },
   messageStatus: {
     type: String,
     enum: Object.values(MESSAGE_STATUS),
     default: MESSAGE_STATUS.PENDING,
-  },
-  notificationType: { type: String, default: 'birthday' },
+  }
 });
+
+UserSchema.index({ nextBirthdayNotification: 1, messageStatus: 1 });
 
 export default mongoose.model<IUser>('User', UserSchema);
